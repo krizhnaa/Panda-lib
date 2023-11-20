@@ -13,10 +13,12 @@ is_game_on = True
 
 while is_game_on:
     answer_state = screen.textinput(title="Guess the state", prompt="What's another state's name? ").title()
-    print(answer_state)
     df = pa.read_csv('50_states.csv')
     states = df['state']
     states_list = states.tolist()
+    for state in states_list:
+        if answer_state == state:
+            print("Damnnnnn")
 
 
 turtle.mainloop()
