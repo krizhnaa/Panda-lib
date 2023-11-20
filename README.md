@@ -2,3 +2,4 @@
 
 # <1> Fetching the US state image and displaying it as the main screen.
 # <2> Taking input from the user for guessing the state.
+# <3> Checking if the user guess is among the states in US.
