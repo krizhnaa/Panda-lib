@@ -12,7 +12,6 @@ turtle.shape(image)
 s_turtle = turtle.Turtle()
 
 correct_guess = []
-to_learn = []
 
 is_game_on = True
 count = 0
@@ -26,9 +25,7 @@ while is_game_on:
     states = df['state']
     states_list = states.tolist()
     if answer_state == 'Exit':
-        for state in states_list:
-            if state not in correct_guess:
-                to_learn.append(state)
+        to_learn = [ state for state in states_list if state not in correct_guess ]
         to_learn_df = pa.DataFrame(to_learn)
         to_learn_df.to_csv('states_to_learn.csv')
         is_game_on = False
