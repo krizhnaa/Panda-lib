@@ -12,6 +12,7 @@ turtle.shape(image)
 s_turtle = turtle.Turtle()
 
 correct_guess = []
+to_learn = []
 
 is_game_on = True
 count = 0
@@ -24,6 +25,13 @@ while is_game_on:
     df = pa.read_csv('50_states.csv')
     states = df['state']
     states_list = states.tolist()
+    if answer_state == 'Exit':
+        for cg in correct_guess:
+            for state in states_list:
+                if cg != state:
+
+
+        is_game_on = False
     for state in states_list:
         if answer_state == state:
             x_loc = int(df[df['state'] == answer_state]['x'])
@@ -38,4 +46,4 @@ while is_game_on:
             count_correct = len(correct_guess)
     count = 1
 
-turtle.mainloop()
+screen.exitonclick()
